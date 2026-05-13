@@ -1,0 +1,23 @@
+<?php $_shouldextend[1]=1; ?>
+
+
+<?php $this->startSection('content'); ?>
+
+
+<h1>Primeiros passos</h1>
+
+ 
+
+
+
+<h2>Introdução</h2>
+
+<p>
+ Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit et, deleniti neque dolores aspernatur iusto! Ducimus quos eligendi laboriosam porro at vitae ullam, quasi veritatis, error asperiores doloremque optio debitis.
+</p>
+
+
+
+
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('templates/doc-template.view.php'); } ?>

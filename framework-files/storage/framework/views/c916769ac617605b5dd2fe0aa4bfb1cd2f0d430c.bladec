@@ -1,0 +1,30 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startPush('styles'); ?>
+<!-- <link rel="stylesheet" href="<?=assets('css/sdsdsdsdsdsd.css')?>?ver=<?=date("YmdHis")?>"> -->
+<?php $this->stopPush(); ?>
+
+<?php $this->startSection('content'); ?>
+
+<section id="gastronomy" class="content-out admin">
+ <div class="content-in main">
+
+ <?php $__currentLoopData = $arr; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $pic): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <div class="cat">
+ <img src="<?php echo static::e(assets('')); ?>images/portfolio/gastronomia/<?php echo static::e($pic['s_file']); ?>" alt="<?php echo static::e($pic['s_text1']); ?>" />
+ <?php if($pic['s_text1'] !== ""): ?>
+ <h3><?php echo static::e($pic['s_text1']); ?></h3>
+ <?php endif; ?>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ 
+ </div>
+</section>
+
+<?php $this->stopSection(); ?>
+
+
+<?php $this->startPush('scripts'); ?>
+<script type="text/javascript" src="<?php echo static::e(assets('js/admin/login.js?v=')); ?><?php echo static::e(date('YmdHis')); ?>"></script>
+<?php $this->stopPush(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('templates/admin-template.view.php'); } ?>

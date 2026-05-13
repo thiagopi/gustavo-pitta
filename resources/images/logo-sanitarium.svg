@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="605.64" height="520.623" viewBox="0 0 605.64 520.623">
+  <title>logo-sanitarium</title>
+  <g>
+    <polygon points="576.635 228.154 605.64 163.167 500.414 163.167 569.233 0 483.278 0 307.506 428.404 137.754 0 46.684 0 115.5 163.167 0 163.167 29.006 228.154 142.909 228.154 170.032 292.463 56.843 292.463 85.849 357.454 197.443 357.454 266.261 520.623 349.651 520.623 418.47 357.454 527.043 357.454 556.048 292.463 445.882 292.463 473.005 228.154 576.635 228.154" fill="#ffb81d"/>
+    <g>
+      <g>
+        <ellipse cx="177.32" cy="164.5" rx="70.218" ry="76.5" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="3"/>
+        <circle cx="204.241" cy="147.001" r="28.043">
+          <animateTransform attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            from="0 200 160"
+            to="360 200 160"
+            dur="0.5s"
+            repeatCount="indefinite"
+          />
+        </circle>
+      </g>
+      <g>
+        <ellipse cx="428.32" cy="164.5" rx="70.218" ry="76.5" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="3"/>
+        <circle cx="407.241" cy="193.001" r="28.043">
+            <animateTransform attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            from="0 410 180"
+            to="-360 410 180"
+            dur="0.5s"
+            repeatCount="indefinite"
+          />
+        </circle>
+      </g>
+    </g>
+  </g>
+</svg>

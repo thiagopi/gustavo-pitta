@@ -1,0 +1,72 @@
+@extends('templates/main-template.view.php')
+
+@push('styles')
+<!-- <link rel="stylesheet" href="<?=assets('css/sdsdsdsdsdsd.css')?>?ver=<?=date("YmdHis")?>"> -->
+@endpush
+
+@section('content')
+
+<section id="cover" class="content-out">
+	<div class="content-in">
+		<div class="text">
+			<h1>Gustavo Pitta</h1>
+			<p>
+				Fotógrafo paulistano nascido em 1983.
+				<br/><br/>
+				Jornalista formado pela PUC-SP, trabalhou como repórter antes de iniciar a carreira na fotografia. Ainda na faculdade de apaixonou pelas imagens.
+                <br/><br/>
+				Fez pós-graduação em Fotografia pelo Senac-SP, quando iniciou sua carreira como fotógrafo profissional.
+                <br/><br/>
+                Especializado em fotografia gastronômica, Gustavo é reconhecido na indústria publicitária, com clientes de destaque como Burger King, JBS, Heinz UK, Vivara, Marfrig, M.Dias Branco (Adria), General Mills (Haagen-Dazs, Kitano), Agropalma, Águas Prata, Abbraccio, Dr. Oetker, Campari.
+                <br/><br/>
+                Presta serviços para as maiores agências do Brasil como Agência David, WMccann, Ogilvy, DM9, Agência Mestiça, Lew’Lara\TBWA.
+                <br/><br/>
+                Além disso, oferece serviços de fotografia de retratos para clientes corporativos, incluindo a Band TV, Grupo Herval, Basf e Suvinil.
+                <br/><br/>
+                Com quinze anos de experiência no mercado, seu portfólio inclui também trabalhos para editoras e museus, como Editora Globo, Editora Abril, Editora Três e o Museu de Arte Moderna de São Paulo (MAM-SP) e Itaú Cultural.
+			</p>
+		</div>
+	</div>
+</section>
+
+<section id="cotegories" class="content-out">
+	<div class="content-in">
+		<a href="./gastronomia" class="cat">
+			<img src="{{ assets('images/portfolio/gastronomy-2023-12-13.jpg') }}" alt="" />
+			<h3>Gastronomia</h3>
+		</a>
+		<a href="./joias" class="cat">
+			<img src="{{ assets('images/portfolio/jewels-2023-12-13.jpg') }}" alt="" />
+			<h3>Joias</h3>
+		</a>
+		<a href="./still" class="cat">
+			<img src="{{ assets('images/portfolio/still-2023-12-13.jpg') }}" alt="" />
+			<h3>Still</h3>
+		</a>
+		<a href="./retratos" class="cat">
+			<img src="{{ assets('images/portfolio/portrait-2022-01-11.jpg') }}" alt="" />
+			<h3>Retratos</h3>
+		</a>
+		<a href="./moda-beleza" class="cat">
+			<img src="{{ assets('images/portfolio/fashion.jpg') }}" alt="" />
+			<h3>Beauty</h3>
+		</a>
+		<a href="./ambiente-e-decoracao" class="cat">
+			<img src="{{ assets('images/portfolio/enviorment-and-decoration.jpg') }}" alt="" />
+			<h3>Ambiente e Decoração</h3>
+		</a>
+		<a href="./making-of" class="cat">
+			<img src="{{ assets('images/portfolio/making-of.jpg') }}" alt="" />
+			<h3>Making of</h3>
+		</a>
+
+	</div>
+</section>
+
+@endsection
+
+
+
+@push('scripts')
+<script type="text/javascript" src="{{ assets('js/home.js?v=') }}{{date('YmdHis')}}"></script>
+@endpush

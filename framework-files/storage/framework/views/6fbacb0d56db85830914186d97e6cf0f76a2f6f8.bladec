@@ -1,0 +1,91 @@
+<?php $_shouldextend[1]=1; ?>
+
+
+<?php $this->startSection('content'); ?>
+
+
+<h1>Blade</h1>
+
+ 
+
+
+
+<h2>Introdução</h2>
+
+<p>
+ Baseado na classe Blade do Laravel, ela foi modificada para não precisar ter um monde de dependências, mas abrangendo os principais recursos que ela provê. Aqui, os arquivos views possuem a extensão .view.php e ficam armazenados na pasta framework-files/views.
+</p>
+
+<h2>Template herdado</h2>
+
+<h3>Definindo um layout</h3>
+
+<p>
+ Uns dos principais benefícios da Blade são o template herdado e as seções. Vamos ver um exemplo de um template master para o layout de uma  ou mais páginas.
+</p>
+
+<!-- DO NOT INDENT <pre>...</pre> -->   
+<pre>
+&lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;App Name - &#64;yield('title')&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &#64;section('sidebar')
+ Aqui fica a barra lateral.
+ &#64;endsection
+ &lt;div class="wrapper"&gt;
+ &#64;yield('content')
+ &lt;/div&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>
+ Como você pode ver, este exemplo possui a típica marcação HTML. No entanto, atente para as diretivas &#64;section e &#64;yield. A primeira (&#64;section) define a seção do conteúdo, enquanto que a segunda (&#64;yield) é usada para mostrar o conteúdo, que no caso seria uma &#64;section('content').
+</p>
+
+<h3>Extendendo um layout</h3>
+
+<p>
+ Quando definimos uma view filha, usamos a diretiva &#64;extends para extender um layout. Uma vez feito isso, o as seções do layout injetará o conteúdo usando a diretiva &#64;section.
+</p>
+
+<!-- DO NOT INDENT <pre>...</pre> -->                
+<pre>
+&#64;extends('templates/main-template.view.php')
+
+&#64;section('content')
+ 
+ &lt;h1&gt;Hello world!&lt;/h1&gt;
+ &lt;img src="images/world.svg"&gt;
+ &lt;p&gt;www.vee.digital&lt;/p&gt;
+
+&#64;endsection
+</pre>
+
+<h2>Mostrando os dados</h2>
+<p>
+ Você deve mostrar os dados passados para a view encapsulando a variável entre colchetes ( [ ] ). Segue um exemplo através de uma rota:
+</p>
+
+<!-- DO NOT INDENT <pre>...</pre> -->  
+<pre>
+&#36;route->get('/exemple', function () {
+ return $blade->run('welcome', ['name' => 'Thiago']);
+});
+</pre>
+
+<p>
+ E agora você pode mostrar o valor da variável na View da seguinte forma:
+</p>
+
+<!-- DO NOT INDENT <pre>...</pre> -->  
+<pre>
+Hello, &#123;&#123; $name &#125;&#125;.
+</pre>
+
+
+
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('templates/doc-template.view.php'); } ?>

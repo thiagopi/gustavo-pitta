@@ -1,0 +1,193 @@
+@extends('templates/doc-template.view.php')
+
+
+@section('content')
+<h1>Tools</h1>
+<ul class="summary">
+    <li><a href="#capitalize">capitalize</a></li>
+    <li><a href="#normalize">normalize</a></li>
+    <li><a href="#lowercase">lowercase</a></li>
+    <li><a href="#uppercase">uppercase</a></li>
+    <li><a href="#clearString">clearString</a></li>
+    <li><a href="#pwGenerate">pwGenerate</a></li>
+    <li><a href="#numberGenerate">numberGenerate</a></li>
+    <li><a href="#masks">masks</a></li>
+    <li><a href="#setMask">setMask</a></li>
+    <li><a href="#dateFormat">dateFormat</a></li>
+    <li><a href="#parseToDecimal">parseToDecimal</a></li>
+    <li><a href="#onlyDate">onlyDate</a></li>
+    <li><a href="#dateDifference">dateDifference</a></li>
+    <li><a href="#onlyNumbers">onlyNumbers</a></li>
+    <li><a href="#redirect">redirect</a></li>
+    <li><a href="#parseCurrencyReal">parseCurrencyReal</a></li>
+    <li><a href="#isCurrencyReal">isCurrencyReal</a></li>
+</ul>
+
+<h2 id="capitalize">capitalize</h2>
+<!-- DO NOT INDENT <pre>...</pre> -->   
+<pre>
+<span>&lt;?php</span>
+<span></span>
+<span>Tools::capitalize('some string here');</span>
+<span>// return: "Some String Here"</span>
+</pre>
+
+<h2 id="normalize">normalize</h2>
+<!-- DO NOT INDENT <pre>...</pre> -->   
+<pre>
+<span>&lt;?php</span>
+<span></span>
+<span>Tools::normalize('áéíóú');</span>
+<span>// return: "aeiou"</span>
+</pre>
+
+<h2 id="lowercase">lowercase</h2>
+<!-- DO NOT INDENT <pre>...</pre> -->   
+<pre>
+<span>&lt;?php</span>
+<span></span>
+<span>Tools::lowercase('SOME stTring HeRe áé');</span>
+<span>// return: "some string here áé"</span>
+</pre>
+
+<h2 id="uppercase">uppercase</h2>
+<!-- DO NOT INDENT <pre>...</pre> -->   
+<pre>
+<span>&lt;?php</span>
+<span></span>
+<span>Tools::uppercase('SOME stTring HeRe áé');</span>
+<span>// return: "SOME STRING HERE ÁÉ"</span>
+</pre>
+
+<h2 id="clearString">clearString</h2>
+<!-- DO NOT INDENT <pre>...</pre> -->   
+<pre>
+<span>&lt;?php</span>
+<span></span>
+<span>Tools::clearString('123.456.789-25');</span>
+<span>// return: "12345678925"</span>
+</pre>
+
+<h2 id="pwGenerate">pwGenerate</h2>
+<!-- DO NOT INDENT <pre>...</pre> -->   
+<pre>
+<span>&lt;?php</span>
+<span></span>
+<span>Tools::pwGenerate(10);</span>
+<span>// return random chars: "gd5e8F45dP"</span>
+</pre>
+
+<h2 id="numberGenerate">numberGenerate</h2>
+<!-- DO NOT INDENT <pre>...</pre> -->   
+<pre>
+<span>&lt;?php</span>
+<span></span>
+<span>Tools::numberGenerate(10);</span>
+<span>// return random numbers: "6281354197"</span>
+</pre>
+
+<h2 id="masks">masks</h2>
+<p>Parar de usar este método, e usar setMask()</p>
+<!-- DO NOT INDENT <pre>...</pre> -->   
+<pre>
+<span>&lt;?php</span>
+<span></span>
+<span>Tools::masks("cnpj", "11222333000144");</span>
+<span>// return: "11.222.333/0001-44"</span>
+<span></span>
+<span>Tools::masks("cpf", "11122233344");</span>
+<span>// return: "111.222.333-44"</span>
+<span></span>
+<span>Tools::masks("cep", "01234567");</span>
+<span>// return: "01234-567"</span>
+</pre>
+
+<h2 id="setMask">setMask</h2>
+<!-- DO NOT INDENT <pre>...</pre> -->   
+<pre>
+<span>&lt;?php</span>
+<span></span>
+<span>Tools::setMask("cnpj", "11222333000144");</span>
+<span>// return: "11.222.333/0001-44"</span>
+<span></span>
+<span>Tools::setMask("cpf", "11122233344");</span>
+<span>// return: "111.222.333-44"</span>
+<span></span>
+<span>Tools::setMask("cep", "01234567");</span>
+<span>// return: "01234-567"</span>
+</pre>
+
+<h2 id="dateFormat">dateFormat</h2>
+<!-- DO NOT INDENT <pre>...</pre> -->   
+<pre>
+<span>&lt;?php</span>
+<span></span>
+<span>Tools::dateFormat('2019-03-28 11:11:47', 'br');</span>
+<span>// return: "28/03/2019"</span>
+<span></span>
+<span>Tools::dateFormat('2019-03-28 11:11:47', 'br-withTimestamp');</span>
+<span>// return: "28/03/2019 11:11:47"</span>
+<span></span>
+<span>Tools::dateFormat('2019-03-28 11:11:47', 'en');</span>
+<span>// return: "2019/03/28"</span>
+</pre>
+
+<h2 id="parseToDecimal">parseToDecimal</h2>
+<!-- DO NOT INDENT <pre>...</pre> -->   
+<pre>
+<span>&lt;?php</span>
+<span></span>
+<span>Tools::parseToDecimal('2500,22');</span>
+<span>// return: "2500.22"</span>
+</pre>
+
+<h2 id="onlyDate">onlyDate</h2>
+
+<h2 id="dateDifference">dateDifference</h2>
+<!-- DO NOT INDENT <pre>...</pre> -->   
+<pre>
+<span>&lt;?php</span>
+<span></span>
+<span>Tools::dateDifference('19-06-2019');</span>
+<span>// if today 2019-07-30 return: "+41"</span>
+</pre>
+
+<h2 id="onlyNumbers">onlyNumbers</h2>
+<!-- DO NOT INDENT <pre>...</pre> -->   
+<pre>
+<span>&lt;?php</span>
+<span></span>
+<span>Tools::onlyNumbers('19-06-2019');</span>
+<span>// return: 19062019</span>
+</pre>
+
+<h2 id="redirect">redirect</h2>
+<!-- DO NOT INDENT <pre>...</pre> -->   
+<pre>
+<span>&lt;?php</span>
+<span></span>
+<span>Tools::redirect('some-page/');</span>
+</pre>
+
+<h2 id="parseCurrencyReal">parseCurrencyReal</h2>
+<!-- DO NOT INDENT <pre>...</pre> -->   
+<pre>
+<span>&lt;?php</span>
+<span></span>
+<span>Tools::parseCurrencyReal('2580.89');</span>
+<span>// return: 2.580,89</span>
+</pre>
+
+<h2 id="isCurrencyReal">isCurrencyReal</h2>
+<!-- DO NOT INDENT <pre>...</pre> -->   
+<pre>
+<span>&lt;?php</span>
+<span></span>
+<span>Tools::isCurrencyReal('2.580,89');</span>
+<span>// return: true</span>
+<span></span>
+<span>Tools::isCurrencyReal('2580.89');</span>
+<span>// return: false</span>
+</pre>
+
+@endsection

@@ -1,0 +1,33 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startPush('styles'); ?>
+<!-- <link rel="stylesheet" href="<?=assets('css/sdsdsdsdsdsd.css')?>?ver=<?=date("YmdHis")?>"> -->
+<?php $this->stopPush(); ?>
+
+<?php $this->startSection('content'); ?>
+
+<section id="login" class="content-out admin">
+ <div class="content-in main">
+
+ <form id="formLogin" name="formLogin">
+ <div class="form-group">
+ <input type="text" name="username" maxlength="15" placeholder="Username">
+ </div>
+ <div class="form-group">
+ <input type="password" name="password" maxlength="15" placeholder="Password">
+ </div>
+ <div class="btn-group center">
+ <div class="btn btn-blue rounded" onClick="validateForm();">Entrar</div>
+ </div>
+ </form>
+ 
+ </div>
+</section>
+
+<?php $this->stopSection(); ?>
+
+
+<?php $this->startPush('scripts'); ?>
+<script type="text/javascript" src="<?php echo static::e(assets('js/admin/login.js?v=')); ?><?php echo static::e(date('YmdHis')); ?>"></script>
+<?php $this->stopPush(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('templates/admin-template.view.php'); } ?>

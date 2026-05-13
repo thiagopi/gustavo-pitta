@@ -1,0 +1,53 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startPush('styles'); ?>
+<!-- <link rel="stylesheet" href="<?=assets('css/sdsdsdsdsdsd.css')?>?ver=<?=date("YmdHis")?>"> -->
+<?php $this->stopPush(); ?>
+
+<?php $this->startSection('content'); ?>
+
+<section class="content-out menu-categories">
+ <a href="<?php echo static::e(base_url()); ?>admin/gastronomia" class="btn btn-white btn-outline rounded">Gastronomia</a>
+ <a href="<?php echo static::e(base_url()); ?>admin/joias" class="btn btn-white btn-outline rounded">Joias</a>
+ <a href="<?php echo static::e(base_url()); ?>admin/still" class="btn btn-white btn-outline rounded">Still</a>
+ <a href="<?php echo static::e(base_url()); ?>admin/retratos" class="btn btn-white btn-outline rounded">Retratos</a>
+ <a href="<?php echo static::e(base_url()); ?>admin/moda" class="btn btn-white btn-outline rounded">Moda</a>
+ <a href="<?php echo static::e(base_url()); ?>admin/ambiente-e-decoracao" class="btn btn-white btn-outline rounded">Ambiente e Decoração</a>
+ <div class="btn btn-blue rounded">Upload</div>
+</section>
+
+<section id="upload" class="content-out admin">
+ <div class="content-in main">
+ <form name="formUpload" id="formUpload" enctype="multipart/form-data">
+ 
+ <div class="form-group center upload">
+ <select name="cbCategory">
+ <option value="">Selecione uma categoria</option>
+ <option value="1">gastronomia</option>
+ <option value="2">Joias</option>
+ <option value="3">Still</option>
+ <option value="4">Retratos</option>
+ <option value="5">Moda</option>
+ <option value="6">Ambiente e Decoração</option>
+ </select>
+
+ <input type="text" name="text_picture" maxlength="100" placeholder="Texto da foto" />
+
+ <input type="file" name="uploadFile" id="uploadFile" class="inputfile" />
+ <label for="uploadFile" class="btn btn-blue rounded hover">Clique aqui para escolher uma foto</label>
+ </div>
+
+ <!-- <div class="btn-group">
+ <div class="btn btn-blue rounded btn-upload">Salvar</div>
+ </div> -->
+ </form>
+ </div>
+</section>
+
+<?php $this->stopSection(); ?>
+
+
+<?php $this->startPush('scripts'); ?>
+<script type="text/javascript" src="<?php echo static::e(assets('js/admin/admin-upload.js?v=')); ?><?php echo static::e(date('YmdHis')); ?>"></script>
+<?php $this->stopPush(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('templates/admin-template.view.php'); } ?>

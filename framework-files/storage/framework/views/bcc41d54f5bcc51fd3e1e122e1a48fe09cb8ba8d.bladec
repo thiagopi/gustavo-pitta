@@ -1,0 +1,8 @@
+<?php $_shouldextend[1]=1; ?>
+
+
+<?php $this->startSection('content'); ?>
+<h1>Functions</h1>
+
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('templates/doc-template.view.php'); } ?>

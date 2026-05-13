@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import 'vars';
+
+// body, html{
+//     background-color: $color-purple;
+//     height: 100%;
+//     @include display-flex(column, center, center);
+// }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    margin: 0;
+}
+
+.content-in{
+    @include display-flex(column, center, center);
+}
+
+h1{
+    font-size: 40px;
+    color: $color-yellow;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+p{
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    //
+    a{
+        color: #fff;
+    }
+    //
+    span{
+        font-size: 2rem;
+        color: $color-yellow;
+    }
+}
+
+.ghost{
+    max-width: 30%;
+    margin: 3%;
+}

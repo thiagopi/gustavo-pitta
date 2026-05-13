@@ -1,0 +1,9 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('content'); ?>
+<h1>Welcome to the Post Page</h1>
+<p>Look up id number in the database</p>
+
+<a href="<?php echo static::e(base_url()); ?>">Go to home page</a>
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('templates/main-template.view.php'); } ?>

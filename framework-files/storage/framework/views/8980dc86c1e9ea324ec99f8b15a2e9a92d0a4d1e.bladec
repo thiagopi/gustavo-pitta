@@ -1,0 +1,14 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startPush('styles'); ?>
+<link rel="stylesheet" href="<?=assets('css/forbidden.css')?>?ver=<?=date("YmdHis")?>">
+<?php $this->stopPush(); ?>
+
+<?php $this->startSection('content'); ?>
+ 
+ <h1>403: Acesso negado</h1>
+ <figure class="full ghost"><img src="<?php echo static::e(assets('images/ghost.svg')); ?>" alt="" width="249" height="319"></figure>
+ <p><a href="https://vee.digital/">www.<span>vee</span>.digital</a></p>
+
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('templates/main-template.view.php'); } ?>

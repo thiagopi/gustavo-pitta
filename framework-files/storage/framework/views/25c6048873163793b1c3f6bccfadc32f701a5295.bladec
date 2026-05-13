@@ -1,0 +1,48 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startPush('styles'); ?>
+<!-- <link rel="stylesheet" href="<?=assets('css/sdsdsdsdsdsd.css')?>?ver=<?=date("YmdHis")?>"> -->
+<?php $this->stopPush(); ?>
+
+<?php $this->startSection('content'); ?>
+
+<section id="cover" class="content-out internal portrait">
+	<div class="content-in">
+ <h1>Retratos</h1>
+	</div>
+</section>
+
+<section class="content-out menu-categories">
+ <a href="<?php echo static::e(base_url()); ?>gastronomia" class="btn btn-white btn-outline rounded">Gastronomia</a>
+ <a href="<?php echo static::e(base_url()); ?>joias" class="btn btn-white btn-outline rounded">Joias</a>
+ <a href="<?php echo static::e(base_url()); ?>still" class="btn btn-white btn-outline rounded">Still</a>
+ <div class="btn btn-blue rounded">Retratos</div>
+ <a href="<?php echo static::e(base_url()); ?>moda" class="btn btn-white btn-outline rounded">Moda</a>
+ <a href="<?php echo static::e(base_url()); ?>ambiente-e-decoracao" class="btn btn-white btn-outline rounded">Ambiente e Decoração</a>
+</section>
+
+<section id="portrait" class="content-out category">
+ <div class="content-in">
+ <div class="wrapper">
+ <?php $__currentLoopData = $arr; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $pic): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <div class="cat">
+ <img src="<?php echo static::e(assets('/')); ?>images/portfolio/retratos/<?php echo static::e($pic['s_file']); ?>" alt="<?php echo static::e($pic['s_text1']); ?>" />
+ <?php if($pic['s_text1'] !== ""): ?>
+ <h3><?php echo static::e($pic['s_text1']); ?></h3>
+ <?php endif; ?>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ <div class="btn-group center">
+ <div class="btn btn-blue rounded btn-loadMore" onClick="loadMore(4)">Carregar mais</div>
+ </div>
+ 
+ </div>
+</section>
+
+<?php $this->stopSection(); ?>
+
+<?php $this->startPush('scripts'); ?>
+<script type="text/javascript" src="<?php echo static::e(assets('js/portfolio.js?v=')); ?><?php echo static::e(date('YmdHis')); ?>"></script>
+<?php $this->stopPush(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('templates/main-template.view.php'); } ?>

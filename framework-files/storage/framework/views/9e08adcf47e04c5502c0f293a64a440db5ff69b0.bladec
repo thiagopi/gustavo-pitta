@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+ <meta name="csrf-token" content="<?php echo static::e(csrf_token()); ?>">
+ <meta name="description" content="">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="author" content="VEE Digital">
+ <meta property="og:title" content="">
+ <meta property="og:site_name" content="">
+ <meta property="og:url" content="">
+ <meta property="og:image" content="">
+	<meta property="og:image:alt" content="">
+ <meta property="og:type" content="website">
+ <meta property="og:description" content="">
+ <meta property="fb:app_id" content="">
+ <meta property="og:locale" content="pt_BR">
+ <meta name="robots" content="noindex, nofollow">
+ <meta name="keywords" content="">
+	<!-- Favicon -->
+ <link rel="icon" type="image/png" href="<?=assets('images/doc/favicon-16x16.png')?>" sizes="16x16">
+ <link rel="icon" type="image/png" href="<?=assets('images/doc/favicon-32x32.png')?>" sizes="32x32">
+ <link rel="icon" type="image/png" href="<?=assets('images/doc/favicon-96x96.png')?>" sizes="96x96">
+ <!-- Other icons -->
+ <link rel="icon" type="image/png" href="<?=assets('images/doc/favicon-128x128.png')?>" sizes="128x128">
+ <link rel="icon" type="image/png" href="<?=assets('images/doc/favicon-196x196.png')?>" sizes="196x196">
+ <link rel="icon" type="image/png" href="<?=assets('images/doc/favicon-228x228.png')?>" sizes="228x228">
+ <!-- Apple Touch Icons -->
+ <link rel="apple-touch-icon" href="<?=assets('images/doc/favicon-120x120.png')?>" sizes="120x120">
+ <link rel="apple-touch-icon" href="<?=assets('images/doc/favicon-180x180.png')?>" sizes="180x180">
+ <link rel="apple-touch-icon" href="<?=assets('images/doc/favicon-152x152.png')?>" sizes="152x152">
+ <link rel="apple-touch-icon" href="<?=assets('images/doc/favicon-16x16167x167.png')?>" sizes="167x167">
+ <!-- Windows Metro -->
+ <link rel="icon" type="image/png" href="<?=assets('images/doc/favicon-70x70.png')?>" sizes="70x70">
+ <link rel="icon" type="image/png" href="<?=assets('images/doc/favicon-270x270.png')?>" sizes="270x270">
+ <link rel="icon" type="image/png" href="<?=assets('images/doc/favicon-310x310.png')?>" sizes="310x310">
+ <link rel="icon" type="image/png" href="<?=assets('images/doc/favicon-310x150.png')?>" sizes="310x150">
+
+	<title>Jupiter Documentation</title>
+	<link rel="stylesheet" href="<?=assets('css/vee-icons.min.css')?>?ver=<?=date("YmdHis")?>">
+	<link rel="stylesheet" href="<?=assets('css/essential.min.css')?>?ver=<?=date("YmdHis")?>">
+	<link rel="stylesheet" href="<?=assets('css/doc/doc.min.css')?>?ver=<?=date("YmdHis")?>">
+
+	<?php echo $this->yieldPushContent('styles'); ?>
+	
+</head>
+<body>
+ <header id="top" class="content-out">
+ <div class="content-in">
+ <div class="left">
+ <figure class="full logo"><a href="<?php echo static::e(base_url()); ?>doc/"><img src="<?=assets('images/doc/logo-jupiter.svg')?>" alt="Jupiter Framework PHP" width="200" height="200"></a></figure>
+ </div>
+ <div class="right">
+ <nav id="main-menu" class="nav-slider">
+ <ul>
+ <li><a href="javascript:void(0)">Documentação</a></li>
+ <li><a href="javascript:void(0)">Novidades</a></li>
+ </ul>
+ </nav>
+ <a href="javascript:void(0)" class="btn btn-blue rounded">Download v0.13</a>
+
+ </div>
+ </div>
+ </header>
+ 
+	<section id="main-content" class="content-out center">
+ <div class="content-in">
+ <aside id="doc-nav">
+ <nav>
+ <ul>
+ <li class="hasSub">
+ <div class="wrapper icon right">
+ <a href="<?php echo static::e(base_url()); ?>doc/blade/">Blade <small>v1.1</small></a>
+ <a href="javascript:void(0)" class="expand"><i class="fv fv-chevron-right contracted"></i><i class="fv fv-chevron-down expanded"></i></a>
+ </div>
+ <ul>
+ <li><a href="<?php echo static::e(base_url()); ?>doc/blade/#introduction">Introdução</a></li>
+ <li><a href="<?php echo static::e(base_url()); ?>doc/blade/#template_inheritance">Template herdado</a></li>
+ <li><a href="<?php echo static::e(base_url()); ?>doc/blade/#displaying_data">Mostrando os dados</a></li>
+ </ul>
+ </li>
+ <li class="hasSub">
+ <div class="wrapper icon right">
+ <a href="<?php echo static::e(base_url()); ?>doc/controller/">Controller</a>
+ <a href="javascript:void(0)" class="expand"><i class="fv fv-chevron-right contracted"></i><i class="fv fv-chevron-down expanded"></i></a>
+ </div>
+ <ul>
+ <li><a href="<?php echo static::e(base_url()); ?>doc/controller/#introduction">Introdução</a></li>
+ <li><a href="<?php echo static::e(base_url()); ?>doc/controller/#defining-controllers">O Básico de Controllers</a></li>
+ <li><a href="<?php echo static::e(base_url()); ?>doc/controller/#controllers-and-namespaces">Controller Middleware</a></li>
+ </ul>
+ </li>
+ <li>
+ <div class="wrapper">
+ <a href="<?php echo static::e(base_url()); ?>doc/errors">Errors</a>
+ </div>
+ </li>
+ <li>
+ <div class="wrapper">
+ <a href="<?php echo static::e(base_url()); ?>doc/functions">Functions</a>
+ </div>
+ </li>
+ <li>
+ <div class="wrapper">
+ <a href="<?php echo static::e(base_url()); ?>doc/log/">Log <small>v1.1</small></a>
+ </div>
+ </li>
+ <li>
+ <div class="wrapper">
+ <a href="<?php echo static::e(base_url()); ?>doc/mail/">Mail <small>v1.0</small></a>
+ </div>
+ </li>
+ <li>
+ <div class="wrapper">
+ <a href="<?php echo static::e(base_url()); ?>doc/request/">Request <small>v1.0</small></a>
+ </div>
+ </li>
+ <li>
+ <div class="wrapper">
+ <a href="<?php echo static::e(base_url()); ?>doc/route/">Route <small>v1.2</small></a>
+ </div>
+ </li>
+ <li>
+ <div class="wrapper">
+ <a href="<?php echo static::e(base_url()); ?>doc/bcrypt/">Bcrypt <small>v1.0</small></a>
+ </div>
+ </li>
+ <li>
+ <div class="wrapper">
+ <a href="<?php echo static::e(base_url()); ?>doc/session/">Session <small>v1.0</small></a>
+ </div>
+ </li>
+ <li>
+ <div class="wrapper">
+ <a href="<?php echo static::e(base_url()); ?>doc/tools/">Tools <small>v1.4</small></a>
+ </div>
+ </li>
+ 
+ </ul>
+ </nav>
+ </aside>
+
+ <section id="the-content">
+ 
+ <?php echo $this->yieldContent('content'); ?>
+
+ </section>
+ </div>
+	</section>
+
+ <footer id="footer" class="content-out">
+ <div class="content-in">
+ <p>Powered by</p>
+ <a href="https://vee.digital/" target="_blank"><figure class="full logo-vee"><img src="<?=assets('images/logo-vee-amarelo-roxo.svg')?>" alt="Jupiter Framework PHP" width="388" height="158"></figure></a>
+ </div>
+ </footer>
+	<!-- ====================================================================
+ SCRIPTS
+ ===================================================================== -->
+ 	
+ <script type="text/javascript" src="<?php echo static::e(assets('js/jquery-3.4.1.min.js')); ?>"></script>
+ <script type="text/javascript" src="<?php echo static::e(assets('js/jquery.blockUI.min.js')); ?>"></script>
+	
+ <script type="text/javascript" src="<?=assets('js/Utils.js')?>?ver=<?=date("YmdHis")?>"></script>
+ <script type="text/javascript" src="<?=assets('js/essential.js')?>?ver=<?=date("YmdHis")?>"></script>
+ <script type="text/javascript" src="<?=assets('js/doc/doc.js')?>?ver=<?=date("YmdHis")?>"></script>
+
+	<?php echo $this->yieldPushContent('scripts'); ?>
+</body>
+</html>

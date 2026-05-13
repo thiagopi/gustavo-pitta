@@ -1,0 +1,60 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startPush('styles'); ?>
+<!-- <link rel="stylesheet" href="<?=assets('css/sdsdsdsdsdsd.css')?>?ver=<?=date("YmdHis")?>"> -->
+<?php $this->stopPush(); ?>
+
+<?php $this->startSection('content'); ?>
+
+<section class="content-out menu-categories">
+ <a href="<?php echo static::e(base_url()); ?>admin/gastronomia" class="btn btn-white btn-outline rounded">Gastronomia</a>
+ <a href="<?php echo static::e(base_url()); ?>admin/joias" class="btn btn-white btn-outline rounded">Joias</a>
+ <a href="<?php echo static::e(base_url()); ?>admin/still" class="btn btn-white btn-outline rounded">Still</a>
+ <a href="<?php echo static::e(base_url()); ?>admin/retratos" class="btn btn-white btn-outline rounded">Retratos</a>
+ <div class="btn btn-blue rounded">Moda</div>
+ <a href="<?php echo static::e(base_url()); ?>admin/ambiente-e-decoracao" class="btn btn-white btn-outline rounded">Ambiente e Decoração</a>
+</section>
+
+<section id="fashion" class="content-out admin">
+ <div class="content-in main">
+ <form name="formPortfolioEdit" class="wrapper">
+ <table class="tbl-pictures">
+ <thead>
+ <tr>
+ <th>Foto</th>
+ <th>Texto</th>
+ <!-- <th>Salvar</th> -->
+ </tr>
+ </thead>
+ <tbody class="sortable">
+ <?php $__currentLoopData = $arr; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$value): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <tr class="single-wrapper" data-position="<?php echo static::e($key); ?>">
+ <td>
+ <figure><img src="<?php echo static::e(assets('')); ?>images/portfolio/moda/<?php echo static::e($value['s_file']); ?>" alt="<?php echo static::e($value['s_text1']); ?>" draggable="false" /></figure>
+ </td>
+ <td>
+ <input type="hidden" name="id<?php echo static::e($value['id_picture']); ?>" class="id" value="<?php echo static::e($value['id_picture']); ?>" data-prop="id" />
+ <input type="text" name="text<?php echo static::e($key); ?>" value="<?php echo static::e($value['s_text1']); ?>" class="text" data-prop="text" />
+ <input type="hidden" name="position<?php echo static::e($key); ?>" class="position" value="<?php echo static::e($key); ?>" data-prop="position" />
+ </td>
+ <!-- <td>&nbsp;</td> -->
+ </tr>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </tbody>
+ </table>
+
+ <div class="btn-group">
+ <div class="btn btn-blue rounded btn-save">Salvar</div>
+ </div>
+ </form>
+ </div>
+</section>
+
+<?php $this->stopSection(); ?>
+
+
+<?php $this->startPush('scripts'); ?>
+<script type="text/javascript" src="<?php echo static::e(assets('js/Sortable.js?v=')); ?><?php echo static::e(date('YmdHis')); ?>"></script>
+<script type="text/javascript" src="<?php echo static::e(assets('js/admin/admin-portfolio.js?v=')); ?><?php echo static::e(date('YmdHis')); ?>"></script>
+<?php $this->stopPush(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('templates/admin-template.view.php'); } ?>
