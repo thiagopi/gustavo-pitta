@@ -7,8 +7,6 @@
 
 .htaccess.phpupgrader.initial
 
-config.php
-
 error_log
 
 framework-files/storage/logs/
